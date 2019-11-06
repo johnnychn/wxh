@@ -58,6 +58,7 @@ Page({
           id: id
         },
         success: function (res) {
+          console.log(res);
           that.setData({
             action: res.result.data
           });

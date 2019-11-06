@@ -12,7 +12,5 @@ exports.main = async (event, context) => {
     actionId: event.id
   }).get();
   action.gift = giftList;
-  return {
-    action
-  }
+  return action
 }

@@ -1,5 +1,5 @@
 <view class="weui-cells weui-cells_after-title">
-    <navigator url="pages/actionDetail/actionDetail" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <navigator url="/pages/actionDetail/actionDetail?id=ca40fca95dc326e402a7fcff0ae9704f" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
         <view class="weui-cell__bd">
         <view>六一儿童节礼品派送活动</view>
         <view>截止日期：2019年11月6日</view>
