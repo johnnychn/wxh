@@ -5,6 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    date:'2019/10/11'
+  },
+
+  bindDateChange:function(data){
+    this.data.date=data.detail.value
+    console.log(data.detail.value)
 
   },
 

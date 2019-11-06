@@ -22,5 +22,5 @@
     </navigator>
 </view>
 <view class="footer veui-view">
-    <button class="button" type="primary">创建活动</button>
+    <button bindtap="gotoAction" class="button" type="primary">创建活动</button>
 </view>

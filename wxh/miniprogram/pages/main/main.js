@@ -1,6 +1,14 @@
 // miniprogram/pages/main/main.js
 Page({
 
+
+  gotoAction:function(){
+    wx.navigateTo({
+      url: '/pages/addAction/addAction'
+    })
+
+  },
+
   /**
    * 页面的初始数据
    */

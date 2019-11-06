@@ -1,7 +1,10 @@
 {
   "pages": [
-    "pages/myAction/myAction",
+    "pages/addAction/addAction",
     "pages/main/main",
+
+    "pages/myAction/myAction",
+    
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
@@ -15,7 +18,6 @@
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
     "pages/im/room/room",
-    "pages/addAction/addAction",
     "pages/actionDetail/actionDetail"
   ],
   "window": {

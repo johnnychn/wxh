@@ -1,2 +1,65 @@
 <!--miniprogram/pages/addAction/addAction.wxml-->
-<text>miniprogram/pages/addAction/addAction.wxml</text>
+<!--index.wxml-->
+
+<view class="root">
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell ">
+            <view class="weui-cell__hd">
+                <view class="weui-label">活动名称</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入活动名称"/>
+            </view>
+        </view>
+        <view class="weui-cells__title">活动说明</view>
+        <view class="weui-cell  ">
+            <view class="weui-cell__bd p10" >
+                <textarea class="weui-textarea" placeholder="请输入活动说明" style="height: 3.3em" />
+                <view class="weui-textarea-counter">0/200</view>
+            </view>
+
+        </view>
+        <view class="weui-cell ">
+            <view class="weui-cell__hd">
+                <view class="weui-label">截止日期</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+                    <view class="weui-input">{{date}}</view>
+                </picker>
+            </view>
+        </view>
+
+        <view class="isMe">
+            <view class="divLine"></view>
+            <view class="me_festival">礼品列表</view>
+            <view class="divLine"></view>
+        </view>
+        <view class="me_festival_item">
+            <text class="me_festival_item_value">米奇数包</text>
+            <view class="img_view">
+                <image class="festival_img" src="../../images/subject.png"></image>
+                <image class="festival_img" src="../../images/subject.png"></image>
+                <image class="festival_img" src="../../images/subject.png"></image>
+                <image class="right" src="../../images/arrow.png"></image>
+            </view>
+        </view>
+        <view class="me_festival_item">
+            <text class="me_festival_item_value">米奇数包</text>
+            <view class="img_view">
+                <image class="festival_img" src="../../images/subject.png"></image>
+                <image class="festival_img" src="../../images/subject.png"></image>
+                <image class="festival_img" src="../../images/subject.png"></image>
+                <image class="right" src="../../images/arrow.png"></image>
+            </view>
+        </view>
+        <view class="footer veui-view mb-10 mt-10">
+            <button bindtap="gotoAction" class="button" type="default">添加礼品</button>
+        </view>
+        <view class="footer veui-view mb-10 mt-10">
+            <button bindtap="gotoAction" class="button" type="primary">完成</button>
+        </view>
+    </view>
+
+</view>
+
