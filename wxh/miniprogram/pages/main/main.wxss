@@ -1,0 +1,14 @@
+.button {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  border-radius: 5px;
+}
+
+.green{
+  color: green;
+}
+
+.red{
+  color: red;
+}

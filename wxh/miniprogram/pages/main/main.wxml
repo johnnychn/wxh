@@ -1,0 +1,24 @@
+<view class="weui-cells weui-cells_after-title">
+    <navigator url="pages/actionDetail/actionDetail" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+        <view>六一儿童节礼品派送活动</view>
+        <view>截止日期：2019年11月6日</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">待分享</view>
+    </navigator>
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+        <view>六一儿童节礼品派送活动</view>
+        <view>截止日期：2019年11月6日</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access green">已分享</view>
+    </navigator>
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+        <view>六一儿童节礼品派送活动</view>
+        <view>截止日期：2019年11月6日</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access red">已过期</view>
+    </navigator>
+</view>
+<button class="button" type="primary">创建活动</button>
