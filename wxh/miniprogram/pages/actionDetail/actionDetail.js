@@ -6,6 +6,7 @@ Page({
    */
   data: {
     action:{
+      status:0,
       id:'',
       title: '六一儿童节礼品派送',
       endDate: '2019年11月6日',

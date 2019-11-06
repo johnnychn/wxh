@@ -35,3 +35,33 @@ page{
   width: 400rpx;
   height: 400rpx;
 }
+
+
+
+
+.mt-10 {
+  margin-top: 10px;
+
+}
+.mt-30 {
+  margin-top: 30px;
+
+}
+.mb-10{
+  margin-bottom: 10px;
+}
+.footer {
+  width: 100%;
+
+  bottom: 10px;
+}
+.hidden{
+  display:none;
+  opacity:0;
+}
+.button {
+  width: auto !important;
+  border-radius: 5px;
+  margin: 0 10px !important;
+
+}

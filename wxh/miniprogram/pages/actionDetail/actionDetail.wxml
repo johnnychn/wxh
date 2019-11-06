@@ -23,4 +23,7 @@
 		</view>
 	</view>
 </view>
-<button bindtap="delAction" class="button" type="warn">删除活动</button>
+
+<view class="footer veui-view mb-10 mt-30  {{action.status!=0 ? 'hidden' : ''}}" >
+	<button bindtap="delAction" class="button" type="warn">删除活动</button>
+</view>

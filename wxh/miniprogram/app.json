@@ -1,8 +1,10 @@
 {
   "pages": [
-    "pages/myAction/myAction",
     "pages/actionDetail/actionDetail",
     "pages/addAction/addAction",
+    "pages/myAction/myAction",
+
+
     "pages/main/main",
     "pages/index/index",
     "pages/userConsole/userConsole",
