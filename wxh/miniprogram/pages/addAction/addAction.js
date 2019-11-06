@@ -30,9 +30,86 @@ Page({
     startDate:dateFormat('YYYY-mm-dd',new Date()),
     name:'',
     desc:'',
-    currentDescWordsCount:0
+    currentDescWordsCount:0,
+    istrue:false,
+    currentGift:{name:'',files:[],count:1},
+    gifts:[]
   },
 
+  bindGiftName:function(e){
+    //活动名称
+    var that = this;
+    var gift=that.data.currentGift;
+    gift.name=e.detail.value
+    this.setData({
+      currentGift:gift
+    })
+    // console.log(e.detail.value)
+  },
+
+  bindGiftCount:function(e){
+    //活动名称
+    var that = this;
+    var gift=that.data.currentGift;
+    gift.count=e.detail.value
+    this.setData({
+      currentGift:gift
+    })
+    // console.log(e.detail.value)
+  },
+
+
+  addGift:function(){
+   var gifts=this.data.gifts.concat(this.data.currentGift);
+
+    this.setData({
+      istrue: false,
+      gifts:gifts,
+      currentGift:{name:'',files:[],count:1}
+    })
+
+  },
+
+  chooseImage: function (e) {
+    var that = this;
+    wx.chooseImage({
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+
+        var gift=that.data.currentGift;
+        gift.files=gift.files.concat(res.tempFilePaths);
+
+        that.setData({
+          currentGift:gift
+        });
+      }
+    })
+  },
+  previewImage: function(e){
+    wx.previewImage({
+      current: e.currentTarget.id, // 当前显示图片的http链接
+      urls: this.data.currentGift.files // 需要预览的图片http链接列表
+    })
+  },
+  previewGiftImage: function(e,img){
+
+    wx.previewImage({
+      current: e.currentTarget.id, // 当前显示图片的http链接
+      urls: this.data.gifts[e.target.dataset.gift_id].files // 需要预览的图片http链接列表
+    })
+  },
+  openDialog: function () {
+    this.setData({
+      istrue: true
+    })
+  },
+  closeDialog: function () {
+    this.setData({
+      istrue: false
+    })
+  },
   bindName:function(e){
     //活动名称
     this.setData({

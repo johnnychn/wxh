@@ -35,31 +35,108 @@
             <view class="me_festival">礼品列表</view>
             <view class="divLine"></view>
         </view>
-        <view class="me_festival_item">
-            <text class="me_festival_item_value">米奇数包</text>
+
+        <view  class="me_festival_item" wx:for="{{gifts}}" wx:for-index="idx" wx:key="*this">
+            <text class="me_festival_item_value">{{item.name}} {{item.count}}/{{item.count}}</text>
+
+
             <view class="img_view">
-                <image class="festival_img" src="../../images/subject.png"></image>
-                <image class="festival_img" src="../../images/subject.png"></image>
-                <image class="festival_img" src="../../images/subject.png"></image>
-                <image class="right" src="../../images/arrow.png"></image>
+                <image  wx:for="{{item.files}}" wx:for-item="img" wx:key="*this" class="festival_img" src="{{img}}" bindtap="previewGiftImage" data-gift_id="{{idx}}" id="{{img}}"/>
+
             </view>
+
         </view>
-        <view class="me_festival_item">
-            <text class="me_festival_item_value">米奇数包</text>
-            <view class="img_view">
-                <image class="festival_img" src="../../images/subject.png"></image>
-                <image class="festival_img" src="../../images/subject.png"></image>
-                <image class="festival_img" src="../../images/subject.png"></image>
-                <image class="right" src="../../images/arrow.png"></image>
-            </view>
-        </view>
-        <view class="footer veui-view mb-10 mt-10">
-            <button bindtap="gotoAction" class="button" type="default">添加礼品</button>
+
+<!--        <view class="me_festival_item">-->
+<!--            <text class="me_festival_item_value">米奇数包</text>-->
+<!--            <view class="img_view">-->
+<!--                <image class="festival_img" src="../../images/subject.png"></image>-->
+<!--                <image class="festival_img" src="../../images/subject.png"></image>-->
+<!--                <image class="festival_img" src="../../images/subject.png"></image>-->
+<!--                <image class="right" src="../../images/arrow.png"></image>-->
+<!--            </view>-->
+<!--        </view>-->
+        <view class="footer veui-view mb-10 mt-30">
+            <button bindtap="openDialog" class="button" type="default">添加礼品</button>
         </view>
         <view class="footer veui-view mb-10 mt-10">
             <button bindtap="gotoAction" class="button" type="primary">完成</button>
         </view>
     </view>
+    <view class="weui-demo-dialog {{istrue ? 'weui-demo-dialog_show' : ''}}">
+        <view class="weui-mask" bindtap="closeDialog"></view>
+        <view class="weui-dialog__wrp" bindtap="closeDialog">
+            <view class="weui-dialog" catchtap="stopEvent">
+                <view class="weui-dialog__hd">
+                    <view class="weui-dialog__title">添加礼物</view>
+                </view>
+                <view class="weui-dialog__bd">
 
+                    <view class="weui-cell ">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">礼物名称</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <input class="weui-input" placeholder="请输入礼物名称" value="{{currentGift.name}}" bindinput="bindGiftName"/>
+                        </view>
+                    </view>
+
+                    <view class="weui-cell ">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">数量</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <input class="weui-input" mode="number" placeholder="数量" value="{{currentGift.count}}" bindinput="bindGiftCount"/>
+                        </view>
+                    </view>
+<!--                    上传-->
+
+
+                    <view class="weui-cells">
+                        <view class="weui-cell">
+                            <view class="weui-cell__bd">
+                                <view class="weui-uploader">
+                                    <view class="weui-uploader__hd">
+                                        <view class="weui-uploader__overview">
+                                            <view class="weui-uploader__title">图片上传</view>
+                                            <view class="weui-uploader__info">{{currentGift.files.length}}/4</view>
+                                        </view>
+                                    </view>
+
+                                    <view class="weui-uploader__bd">
+                                        <view style="width:70vw;height: 1px"></view>
+                                        <view class="weui-uploader__files" id="uploaderFiles" >
+
+                                            <block wx:for="{{currentGift.files}}" wx:key="*this">
+                                                <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                                                    <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                                </view>
+                                            </block>
+
+                                        </view>
+                                        <view  class="weui-uploader__input-box {{currentGift.files.length>=4 ? 'hidden' : ''}}">
+                                            <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+
+<!--                    上传结束-->
+
+
+
+
+                </view>
+                <view class="weui-dialog__ft">
+                    <view class="weui-dialog__btn weui-dialog__btn_default" bindtap="closeDialog">取消</view>
+                    <view class="weui-dialog__btn" bindtap="addGift">确定</view>
+                </view>
+            </view>
+        </view>
+    </view>
 </view>
+
+
 
