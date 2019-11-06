@@ -4,118 +4,54 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    festivalList: [
-      {
-        name: "张三",
-        festival: "米奇书包",
-        imgs: [
-          "../../images/subject.png",
-          "../../images/subject.png",
-          "../../images/subject.png"
+    result: {
+      memo: "六一儿童节到来了，本机构为小朋友准备了各种礼物，派发给大家六一儿童节到来了，本机构为小朋友准备了各种礼物，派发给大家六一儿童节到来了，本机构为小朋友准备了各种礼物，派发给大家六一儿童节到来了，本机构为小朋友准备",
+      myAward: {
+        name: "水彩笔",
+        images: [
+          'http://bpic.588ku.com/element_origin_min_pic/16/10/30/528aa13209e86d5d9839890967a6b9c1.jpg',
+          'http://bpic.588ku.com/element_origin_min_pic/16/10/30/54fcef525fa8f6037d180f3c26f3be65.jpg',
+          'http://bpic.588ku.com/element_origin_min_pic/16/10/30/62e3ca3a02dddb002eff00482078d194.jpg',
+          'http://bpic.588ku.com/element_origin_min_pic/16/10/31/c7167fcfb4ebcd12621c05b0c852e98e.jpg'
         ]
       },
-      {
-        name: "李四",
-        festival: "米奇铅笔盒",
-        imgs: [
-          "../../images/subject.png",
-          "../../images/subject.png",
-          "../../images/subject.png"
-        ]
-      },
-      {
-        name: "王五",
-        festival: "米奇笔记本",
-        imgs: [
-          "../../images/subject.png",
-          "../../images/subject.png",
-          "../../images/subject.png"
-        ]
-      },
-      {
-        name: "赵六",
-        festival: "米奇书包",
-        imgs: [
-          "../../images/subject.png",
-          "../../images/subject.png",
-          "../../images/subject.png"
-        ]
-      },
-      {
-        name: "关羽",
-        festival: "米奇书包",
-        imgs: [
-          "../../images/subject.png",
-          "../../images/subject.png",
-          "../../images/subject.png"
-        ]
-      },
-      {
-        name: "刘备",
-        festival: "米奇书包",
-        imgs: [
-          "../../images/subject.png",
-          "../../images/subject.png",
-          "../../images/subject.png"
-        ]
-      },
-    ],
-  },
-
-  createActivityPage: function () {
-    wx.navigateTo({
-      url: '../createActivity/createActivity'
-    })
-  },
-  detail: function () {
-    wx.navigateTo({
-      url: '../activityDetailPage/activityDetailPage'
-    })
-  },
-  //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
+      awardList: [
+        {
+          name: "米奇书包",
+          username:"张三",
+          images: [
+            'http://bpic.588ku.com/element_origin_min_pic/16/10/30/528aa13209e86d5d9839890967a6b9c1.jpg',
+            'http://bpic.588ku.com/element_origin_min_pic/16/10/30/54fcef525fa8f6037d180f3c26f3be65.jpg',
+            'http://bpic.588ku.com/element_origin_min_pic/16/10/30/62e3ca3a02dddb002eff00482078d194.jpg',
+            'http://bpic.588ku.com/element_origin_min_pic/16/10/31/c7167fcfb4ebcd12621c05b0c852e98e.jpg'
+          ]
+        },
+        {
+          name: "钢笔",
+          username: "李四",
+          images: [
+            'http://bpic.588ku.com/element_origin_min_pic/16/10/30/528aa13209e86d5d9839890967a6b9c1.jpg',
+            'http://bpic.588ku.com/element_origin_min_pic/16/10/30/54fcef525fa8f6037d180f3c26f3be65.jpg',
+            'http://bpic.588ku.com/element_origin_min_pic/16/10/30/62e3ca3a02dddb002eff00482078d194.jpg',
+            'http://bpic.588ku.com/element_origin_min_pic/16/10/31/c7167fcfb4ebcd12621c05b0c852e98e.jpg'
+          ]
         }
-      })
+      ]
     }
   },
-  getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+  onLoad: function () {
+    let that = this;
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'getActionResult',
+      // 传给云函数的参数
+      data: {},
+      success: function (res) {
+        that.setData({
+          result: res.data
+        });
+      },
+      fail: console.error
     })
   }
 })
