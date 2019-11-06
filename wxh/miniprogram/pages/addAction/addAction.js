@@ -13,7 +13,24 @@ Page({
     console.log(data.detail.value)
 
   },
-
+  addAction: function(e){
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'addAction',
+      // 传给云函数的参数
+      data: {
+        title: 'title',
+        memo: 'memo',
+        endDate: 'endDate',
+        userId: 'userId',
+        inDate: 'inDate'
+      },
+      success: function (res) {
+        console.log(res.result.sum) // 3
+      },
+      fail: console.error
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

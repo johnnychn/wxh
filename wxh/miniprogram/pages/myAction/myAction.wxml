@@ -18,7 +18,8 @@
       <image class="festival_img" src="../../images/subject.png"></image>
       <image class="festival_img" src="../../images/subject.png"></image>
       <image class="festival_img" src="../../images/subject.png"></image>
-      <image class="right" src="../../images/arrow.png"></image>
+      <image class="festival_img" src="../../images/subject.png"></image>
+      <!-- <image class="right" src="../../images/arrow.png"></image> -->
     </view>
   </view>
   <view class="isOther">
