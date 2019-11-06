@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96ee6bf2-eadf-4e3e-99a6-01c80ed42169" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/wxh/miniprogram/thirdParty/date.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wxh/miniprogram/pages/addAction/addAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/wxh/miniprogram/pages/addAction/addAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wxh/miniprogram/pages/addAction/addAction.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/wxh/miniprogram/pages/addAction/addAction.wxml" afterDir="false" />
@@ -74,7 +73,7 @@
       <workItem from="1573042451325" duration="261000" />
       <workItem from="1573042844635" duration="1778000" />
       <workItem from="1573046162880" duration="19000" />
-      <workItem from="1573046191606" duration="5311000" />
+      <workItem from="1573046191606" duration="5569000" />
     </task>
     <servers />
   </component>

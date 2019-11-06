@@ -29,7 +29,8 @@ Page({
     date:dateFormat('YYYY-mm-dd',new Date()),
     startDate:dateFormat('YYYY-mm-dd',new Date()),
     name:'',
-    desc:''
+    desc:'',
+    currentDescWordsCount:0
   },
 
   bindName:function(e){
@@ -43,8 +44,11 @@ Page({
   bindDesc:function(e){
     //活动描述
     this.setData({
-      desc: e.detail.value
+      desc: e.detail.value,
+      currentDescWordsCount:e.detail.value.length
     })
+
+
     // console.log(e.detail.value)
   },
 
