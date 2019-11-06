@@ -1,14 +1,22 @@
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+}
+
 .button {
-  width: 100%;
-  position: absolute;
-  bottom: 10px;
-  border-radius: 5px;
+    width: auto !important;
+    border-radius: 5px;
+    margin: 0 10px !important;
+
+
+
 }
 
-.green{
-  color: green;
+.green {
+    color: green;
 }
 
-.red{
-  color: red;
+.red {
+    color: red;
 }

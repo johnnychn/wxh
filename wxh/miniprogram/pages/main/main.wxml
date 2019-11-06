@@ -21,4 +21,6 @@
         <view class="weui-cell__ft weui-cell__ft_in-access red">已过期</view>
     </navigator>
 </view>
-<button class="button" type="primary">创建活动</button>
+<view class="footer veui-view">
+    <button class="button" type="primary">创建活动</button>
+</view>
