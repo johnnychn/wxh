@@ -1,2 +1,62 @@
-<!--miniprogram/pages/actionDetail/actionDetail.wxml-->
-<text>miniprogram/pages/actionDetail/actionDetail.wxml</text>
+<view class="text title">六一儿童节礼品派送</view>
+<view class="text deadline">截止日期：2019年11月6日</view>
+<view class="text explan">六一儿童节到来了，本机构为小朋友准备了各种礼物，派发给大家六一儿童节到来了，本机构为小朋友准备了各种礼物，派发给大家六一儿童节到来了，本机构为小朋友准备了各种礼物，派发给大家六一儿童节到来了，本机构为小朋友准备</view>
+
+<view class="weui-cells__title">礼品列表</view>
+<view class="weui-cells">
+	<view class="weui-cell">
+		<view class="weui-cell__bd" bindtap="previewImg">
+			<view class="weui-uploader">
+				<view class="weui-uploader__hd">
+				  <view class="weui-uploader__tips">
+					米奇书包
+				  </view>
+				</view>
+				<view class="weui-uploader__bd">
+					<view class="weui-uploader__files" id="uploaderFiles">
+						<view class="weui-uploader__file">
+							<image class="weui-uploader__img" src="../../images/000.png" mode="aspectFill" />
+						</view>
+						<view class="weui-uploader__file">
+							<image class="weui-uploader__img" src="../../images/000.png" mode="aspectFill" />
+						</view>
+						<view class="weui-uploader__file">
+							<image class="weui-uploader__img" src="../../images/000.png" mode="aspectFill" />
+						</view>
+						<view class="weui-uploader__file">
+							<image class="weui-uploader__img" src="../../images/000.png" mode="aspectFill" />
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+  <view class="weui-cell">
+		<view class="weui-cell__bd">
+			<view class="weui-uploader">
+				<view class="weui-uploader__hd">
+				  <view class="weui-uploader__tips">
+					米奇书包
+				  </view>
+				</view>
+				<view class="weui-uploader__bd">
+					<view class="weui-uploader__files" id="uploaderFiles">
+						<view class="weui-uploader__file">
+							<image class="weui-uploader__img" src="../../images/000.png" mode="aspectFill" />
+						</view>
+						<view class="weui-uploader__file">
+							<image class="weui-uploader__img" src="../../images/000.png" mode="aspectFill" />
+						</view>
+						<view class="weui-uploader__file">
+							<image class="weui-uploader__img" src="../../images/000.png" mode="aspectFill" />
+						</view>
+						<view class="weui-uploader__file">
+							<image class="weui-uploader__img" src="../../images/000.png" mode="aspectFill" />
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,1 +1,37 @@
-/* miniprogram/pages/actionDetail/actionDetail.wxss */
+page{
+  background-color: #FFFFFF;
+}
+.text{
+  text-align: center;
+  width: 100%;
+}
+.title{
+  font-size: 18px;
+  font-style: 800;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.deadline{
+  font-size: 12px;
+  color: #999999;
+}
+.explan{
+  font-size: 14px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.weui-uploader__img {
+  width: 60px;
+  height: 60px;
+  border:1px solid rgba(0,0,0,.1);
+}
+.imgList{
+  width: 100%;
+}
+.imgList .imgList-li{
+  width: 100%;
+}
+.imgList .imgList-li .img{
+  width: 400rpx;
+  height: 400rpx;
+}
