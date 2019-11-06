@@ -8,14 +8,14 @@
                 <view class="weui-label">活动名称</view>
             </view>
             <view class="weui-cell__bd">
-                <input class="weui-input" placeholder="请输入活动名称"/>
+                <input class="weui-input" placeholder="请输入活动名称" bindinput="bindName"/>
             </view>
         </view>
         <view class="weui-cells__title">活动说明</view>
         <view class="weui-cell  ">
             <view class="weui-cell__bd p10" >
-                <textarea class="weui-textarea" placeholder="请输入活动说明" style="height: 3.3em" />
-                <view class="weui-textarea-counter">0/200</view>
+                <textarea class="weui-textarea" placeholder="请输入活动说明" maxlength="200" bindinput="bindDesc" style="height: 3.3em" />
+                <view class="weui-textarea-counter">{{currentDescWordsCount}}/200</view>
             </view>
 
         </view>
@@ -24,7 +24,7 @@
                 <view class="weui-label">截止日期</view>
             </view>
             <view class="weui-cell__bd">
-                <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+                <picker mode="date" value="{{date}}" start="{{startDate}}" end="2020-09-01" bindchange="bindDateChange">
                     <view class="weui-input">{{date}}</view>
                 </picker>
             </view>
