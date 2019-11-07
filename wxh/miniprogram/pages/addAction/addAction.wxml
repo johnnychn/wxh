@@ -60,7 +60,7 @@
             <button bindtap="openDialog" class="button" type="default">添加礼品</button>
         </view>
         <view class="footer veui-view mb-10 mt-10">
-            <button bindtap="gotoAction" class="button" type="primary">完成</button>
+            <button bindtap="addAction" class="button" type="primary">完成</button>
         </view>
     </view>
     <view class="weui-demo-dialog {{istrue ? 'weui-demo-dialog_show' : ''}}">

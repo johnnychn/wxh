@@ -6,6 +6,8 @@ cloud.init()
 // 云函数入口函数
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext();
+  event.title;
+  
   const action = event.action;
   const db = cloud.database();
   db.collection('action').add({

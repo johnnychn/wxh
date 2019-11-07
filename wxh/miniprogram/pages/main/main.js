@@ -20,7 +20,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this;
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'actionQuery',
+      // 传给云函数的参数
+      data: {},
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          actions: res.result.actions.data
+        });
+      },
+      fail: console.error
+    })
   },
 
   /**

@@ -1,24 +1,12 @@
 <view class="weui-cells weui-cells_after-title">
-    <navigator url="/pages/actionDetail/actionDetail?id=ca40fca95dc326e402a7fcff0ae9704f" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <navigator url="/pages/actionDetail/actionDetail?id={{item._id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for="{{actions}}" wx:key="">
         <view class="weui-cell__bd">
-        <view>六一儿童节礼品派送活动</view>
-        <view>截止日期：2019年11月6日</view>
+        <view>{{item.title}}</view>
+        <view>截止日期：{{item.endDate}}</view>
         </view>
-        <view class="weui-cell__ft weui-cell__ft_in-access">待分享</view>
-    </navigator>
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-        <view>六一儿童节礼品派送活动</view>
-        <view>截止日期：2019年11月6日</view>
-        </view>
-        <view class="weui-cell__ft weui-cell__ft_in-access green">已分享</view>
-    </navigator>
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">
-        <view>六一儿童节礼品派送活动</view>
-        <view>截止日期：2019年11月6日</view>
-        </view>
-        <view class="weui-cell__ft weui-cell__ft_in-access red">已过期</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access" wx:if="{{item.status==0}}">待分享</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access green" wx:elif="{{item.status==1}}">已分享</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access red" wx:else>已过期</view>
     </navigator>
 </view>
 <view class="footer veui-view">

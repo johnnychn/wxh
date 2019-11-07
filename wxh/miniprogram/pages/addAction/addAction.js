@@ -138,19 +138,45 @@ Page({
 
   },
   addAction: function(e){
+    if (!this.data.name){
+      wx.showToast({
+        title: '活动名称不可为空',
+      })
+      return;
+    }
+    if (!this.data.desc) {
+      wx.showToast({
+        title: '活动说明不可为空',
+      })
+      return;
+    }
+    if (!this.data.date) {
+      wx.showToast({
+        title: '活动截止日期不可为空',
+      })
+      return;
+    }
+    if (this.data.gifts.length < 1) {
+      wx.showToast({
+        title: '礼品不可为空',
+      })
+      return;
+    }
     wx.cloud.callFunction({
       // 云函数名称
-      name: 'addAction',
+      name: 'actionEdit',
       // 传给云函数的参数
       data: {
-        title: 'title',
-        memo: 'memo',
-        endDate: 'endDate',
-        userId: 'userId',
-        inDate: 'inDate'
+        title: this.data.name,
+        memo: this.data.desc,
+        endDate: this.data.date,
+        gifts: this.data.gifts
       },
       success: function (res) {
-        console.log(res.result.sum) // 3
+        wx.showToast({
+          title: '活动创建成功',
+        })
+        wx.navigateBack();
       },
       fail: console.error
     })

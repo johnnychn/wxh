@@ -1,7 +1,7 @@
 //app.js
 App({
-  onLaunch: function () {
-    
+  onLaunch: function (res) {
+
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -14,7 +14,44 @@ App({
         traceUser: true,
       })
     }
-
+    //如果是通过群聊进来的
+    if (res.scene == 1044) {
+      wx.getShareInfo({
+        shareTicket: res.shareTicket,
+        success: function (res) {
+          var cloudID = res.cloudID;
+          wx.cloud.callFunction({
+            name: 'getopengid',
+            data: {
+              groupid: wx.cloud.CloudID(cloudID)
+            },
+            success: res => {
+              console.log("微信群id:" + res.result.event.groupid.data.openGId)
+            }
+          })
+        }
+      })
+    }
     this.globalData = {}
+  },
+  onShow: function (res) {
+    //如果是通过群聊进来的
+    if (res.scene == 1044) {
+      wx.getShareInfo({
+        shareTicket: res.shareTicket,
+        success: function (res) {
+          var cloudID = res.cloudID;
+          wx.cloud.callFunction({
+            name: 'getopengid',
+            data: {
+              groupid: wx.cloud.CloudID(cloudID)
+            },
+            success: res => {
+              console.log("微信群id:" + res.result.event.groupid.data.openGId)
+            }
+          })
+        }
+      })
+    }
   }
 })
